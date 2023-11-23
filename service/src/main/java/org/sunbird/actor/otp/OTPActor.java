@@ -129,7 +129,7 @@ public class OTPActor extends BaseActor {
               + type);
       ProjectCommonException.throwClientErrorException(ResponseCode.errorOTPExpired);
     }
-    int remainingCount = getRemainingAttemptedCount(otpDetails)-1;
+    int remainingCount = getRemainingAttemptedCount(otpDetails);
     if (remainingCount <= 0) {
       logger.info(
               request.getRequestContext(),
